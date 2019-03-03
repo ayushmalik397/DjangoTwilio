@@ -1,25 +1,19 @@
 {% extends 'base.html' %}
     {% block pagecontent %}
-    <div>
-    <nav id="comeNav" class="navbar navbar-light">
-      <span class="navbar-brand mb-0 h1 navText"><h1>Come In!</h1></span>
-    </nav>
-  </div>
     <div class="container">
       <h2>Society Portal</h2>
       <form method="post">
         {% csrf_token %}
         <div class="form-group">
-          <label for="exampleInputnumber">Contact No.</label>
+          <label>Guest Name</label>
+          <input type="text" class="form-control" id="Inputnumber" name="gname" placeholder="Enter Guest Name">
+        </div>
+        <div class="form-group">
+          <label>Contact No.</label>
           <input type="tel" class="form-control" id="Inputnumber" name="contact" placeholder="Enter Contact No.">
           <small id="numberInput" class="form-text text-muted">We'll never share your Contact No. with anyone else.</small>
         </div>
-        <div class="form-group">
-          <label for="exampleFormControlTextarea1" placeholder="Enter Message">Message</label>
-          <textarea class="form-control" id="messageInput" name="text" rows="3" placeholder="Enter Message"></textarea>
-        </div>
         <button type="submit" class="btn btn-primary">Send</button>
       </form>
-      <p><a href="{% url 'about' %}">Go Home</a></p>
     </div>
     {% endblock %}
